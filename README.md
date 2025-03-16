@@ -6,8 +6,6 @@ I used two steps:
   <li>Wavelet denoising using adaptive wavelet thresholding (pywt).</li>
 </ol>
 
-
-<br><br>
 <img src="figures/Figure_1.png" align=center width=500px></img>
 
 <h3> Scalogram of Bandpassed ECG Signal: </h3>
