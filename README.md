@@ -1,5 +1,13 @@
 # ECG Preprocessing
-This repository preprocesses ECG signals (lead II) and generates the corresponding scalogram for use in machine learning applications. <br><br>
+This repository preprocesses ECG signals (lead II) and generates the corresponding scalogram for use in machine learning applications. 
+I used two steps: 
+<ol>
+  <li>Bandpass filtering to remove artifacts and baseline drift (Wc: [40,150]).</li>
+  <li>Wavelet denoising using adaptive wavelet thresholding (pywt).</li>
+</ol>
+
+
+<br><br>
 <img src="figures/Figure_1.png" align=center width=500px></img>
 
 <h3> Scalogram of Bandpassed ECG Signal: </h3>
