@@ -13,14 +13,17 @@ def bandpass_signal(data, fs, wcl, wch):
 
 def wavelet_denoise(signal, wavelet = 'sym6', level=4, method='soft'):
     coeffs = pywt.wavedec(signal, wavelet, level)
-    sigma = np.median(np.abs(coeffs[-1])) / 0.6745
 
+    # Estimate noise and compute adaptive threshold
+    sigma = np.median(np.abs(coeffs[-1])) / 0.6745
     thresholds = [sigma * np.sqrt(2* np.log(len(signal)))] * len(coeffs)
 
-    new_coeffs = [coeffs[0]]
+    # Create new coefficients
+    new_coeffs = [coeffs[0]] # Keep approximation coeffcient unchanged
     for i in range(1,len(coeffs)):
-        new_coeffs.append(pywt.threshold(coeffs[i], thresholds[i], mode=method))
+        new_coeffs.append(pywt.threshold(coeffs[i], thresholds[i], mode=method)) # Apply adaptive threshold to detail coefficients (1+)
     
+    # Apply inverse wavelet transform to reconstruct signal using the new coefficients
     reconstructed_signal = pywt.waverec(new_coeffs, wavelet)
     return reconstructed_signal
 
