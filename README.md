@@ -15,5 +15,5 @@ I used two steps:
 
 <br><br>
 Additionally, I decomposed the bandpassed ECG signal into its approximation and detail coefficients.
-<img src="figures/Figure_2.png></img>
-<img src="figures/Figure_3.png></img>
+<img src="figures/Figure_2.png"></img>
+<img src="figures/Figure_3.png"></img>
