@@ -12,3 +12,8 @@ I used two steps:
 <img src="figures/scalogram_colored_image.png"></img>
 <h3> Scalogram of ECG Signal After Wavelet Denoising: </h3>
 <img src="figures/scalogram_colored_image2.png"></img>
+
+<br><br>
+Additionally, I decomposed the bandpassed ECG signal into its approximation and detail coefficients.
+<img src="figures/Figure_2.png></img>
+<img src="figures/Figure_3.png></img>
